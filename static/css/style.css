@@ -529,6 +529,7 @@ input[type=number] {
     -webkit-animation: spin 2s linear infinite;
     /* Safari */
     animation: spin 2s linear infinite;
+    z-index: 1000;
 }
 
 @-webkit-keyframes spin {

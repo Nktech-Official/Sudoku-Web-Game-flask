@@ -86,7 +86,7 @@ for (i in list) {
 // console.log(row1)
 $(document).on("click", "#newGame", function() {
     reset();
-    $("overlay").css({ "display": "none" })
+    $("#overlay").css({ "display": "none" })
     $("#loader").css({ "display": "block" })
 
 
