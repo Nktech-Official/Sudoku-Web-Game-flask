@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sudoku</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='icon/favicon.png') }}" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="{{url_for('static',filename='script/app.js')}}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+{% block body %} {% endblock body %}
+
+<div class="topnav" id="myTopnav">
+    <a id="Home" href="/">Home</a>
+    <a id="github" href="https://github.com/Nktech-Official/" target="_blank">Source Code - github</a>
+    <a href="https://github.com/Nktech-Official/" target="_blank">Report issue/bug</a>
+    <a href="javascript:void(0);" class="icon" onclick="repo_nav()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+
+<div class="content">
+    {% block content %} {% endblock content %}
+</div>
+</body>
+
+</html>

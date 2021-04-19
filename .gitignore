@@ -1,0 +1,6 @@
+# Ignore VS code setting
+/.vscode/
+# Ignore Virtual ENV
+/sudoku/
+# Ignore pychace
+__pychace__

@@ -1,0 +1,550 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.topnav {
+    overflow: auto;
+    background-color: #333;
+    width: 100%;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 650px) {
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .topnav.responsive {
+        position: fixed;
+        z-index: 5;
+    }
+    .topnav.responsive .icon {
+        position: fixed;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+table {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    /* border: solid; */
+    border-collapse: collapse;
+    display: inline-block;
+    grid-column-gap: none;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+td {
+    margin: 0px;
+    padding: 0em;
+    width: 2px;
+    text-align: center;
+    border: 1px solid #666666;
+}
+
+fieldset {
+    width: auto;
+    margin: 0 auto;
+    display: inline-table;
+}
+
+
+/* td {} */
+
+.nav {
+    padding: 5px;
+    border: none
+}
+
+input {
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+    font-size: x-large;
+    text-align: center;
+    color: transparent;
+    text-shadow: 0 0 0 blue;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.Input:hover {
+    background-color: rgb(221, 238, 255);
+    outline: 0;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    color: #4CAF50;
+    background-color: black;
+    border-radius: 10px;
+    font-size: larger;
+    font-style: italic;
+    text-align: center;
+    border: none;
+}
+
+@media screen and (max-width:500px) {
+    input {
+        width: 38px;
+        height: 38px;
+        font-size: medium;
+    }
+    .container {
+        clear: both;
+        float: none;
+    }
+}
+
+@media screen and (max-width:410px) {
+    input {
+        width: 33px;
+        height: 33px;
+        font-size: medium;
+    }
+    button {
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width:345px) {
+    input {
+        width: 28px;
+        height: 28px;
+        font-size: medium;
+    }
+    button {
+        font-size: small;
+    }
+}
+
+@media screen and (max-width:300px) {
+    input {
+        width: 22px;
+        height: 22px;
+        font-size: smaller;
+    }
+    button {
+        font-size: x-small;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    input {
+        width: 45px;
+        height: 45px;
+    }
+    button {
+        font-size: x-large;
+    }
+}
+
+#cell-A3,
+#cell-B3,
+#cell-C3,
+#cell-D3,
+#cell-E3,
+#cell-F3,
+#cell-G3,
+#cell-H3,
+#cell-I3 {
+    border-right: solid 2px;
+}
+
+#cell-A4,
+#cell-B4,
+#cell-C4,
+#cell-D4,
+#cell-E4,
+#cell-F4,
+#cell-G4,
+#cell-H4,
+#cell-I4 {
+    border-left: solid 2px;
+}
+
+#cell-A6,
+#cell-B6,
+#cell-C6,
+#cell-D6,
+#cell-E6,
+#cell-F6,
+#cell-G6,
+#cell-H6,
+#cell-I6 {
+    border-right: solid 2px;
+}
+
+#cell-A7,
+#cell-B7,
+#cell-C7,
+#cell-D7,
+#cell-E7,
+#cell-F7,
+#cell-G7,
+#cell-H7,
+#cell-I7 {
+    border-left: solid 2px;
+}
+
+#cell-C1,
+#cell-C2,
+#cell-C3,
+#cell-C4,
+#cell-C5,
+#cell-C6,
+#cell-C7,
+#cell-C8,
+#cell-C9 {
+    border-bottom: solid 2px;
+}
+
+#cell-D1,
+#cell-D2,
+#cell-D3,
+#cell-D4,
+#cell-D5,
+#cell-D6,
+#cell-D7,
+#cell-D8,
+#cell-D9 {
+    border-top: solid 2px;
+}
+
+#cell-F1,
+#cell-F2,
+#cell-F3,
+#cell-F4,
+#cell-F5,
+#cell-F6,
+#cell-F7,
+#cell-F8,
+#cell-F9 {
+    border-bottom: solid 2px;
+}
+
+#cell-G1,
+#cell-G2,
+#cell-G3,
+#cell-G4,
+#cell-G5,
+#cell-G6,
+#cell-G7,
+#cell-G8,
+#cell-G9 {
+    border-top: solid 2px;
+}
+
+#cell-A9,
+#cell-B9,
+#cell-C9,
+#cell-D9,
+#cell-E9,
+#cell-F9,
+#cell-G9,
+#cell-H9,
+#cell-I9 {
+    border-right: solid 2px;
+}
+
+#cell-A1,
+#cell-B1,
+#cell-C1,
+#cell-D1,
+#cell-E1,
+#cell-F1,
+#cell-G1,
+#cell-H1,
+#cell-I1 {
+    border-left: solid 2px;
+}
+
+#cell-A1,
+#cell-A2,
+#cell-A3,
+#cell-A4,
+#cell-A5,
+#cell-A6,
+#cell-A7,
+#cell-A8,
+#cell-A9 {
+    border-top: solid 2px;
+}
+
+#cell-I1,
+#cell-I2,
+#cell-I3,
+#cell-I4,
+#cell-I5,
+#cell-I6,
+#cell-I7,
+#cell-I8,
+#cell-I9 {
+    border-bottom: solid 2px;
+}
+
+legend {
+    text-align: center;
+    font-size: xx-large;
+    font-style: italic;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    float: left;
+}
+
+
+/* Hide the browser's default radio button */
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+/* Create a custom radio button */
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+
+/* On mouse-over, add a grey background color */
+
+.container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+
+/* When the radio button is checked, add a blue background */
+
+.container input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+/* Show the indicator (dot/circle) when checked */
+
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+
+/* Style the indicator (dot/circle) */
+
+.container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+.active {
+    background-color: rgba(47, 96, 165, 0.192);
+}
+
+.active:hover {
+    background-color: rgba(47, 96, 165, 0.192);
+}
+
+.duplicate {
+    background-color: rgba(243, 70, 70, 0.788);
+}
+
+.focused {
+    background-color: rgba(92, 208, 243, 0.37);
+}
+
+.focused:hover {
+    background-color: rgba(92, 208, 243, 0.37);
+}
+
+#game-grid {
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+}
+
+#table {
+    /* position: absolute; */
+    height: fit-content;
+    width: fit-content;
+}
+
+#overlay,
+#loading {
+    position: absolute;
+    display: none;
+    height: 89%;
+    width: 94%;
+    top: 10.2%;
+    left: 6%;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    z-index: 1;
+    cursor: pointer;
+}
+
+#fa-play {
+    color: red;
+    position: relative;
+    margin-left: 42%;
+    margin-top: 39%;
+    font-size: 79px;
+}
+
+.black {
+    color: transparent;
+    text-shadow: 0 0 0 black;
+}
+
+.pause {
+    color: transparent;
+    text-shadow: none;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Firefox */
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#time {
+    /* position: relative; */
+    height: fit-content;
+    width: fit-content;
+    margin-top: 15px;
+    padding: 5px;
+    /* margin */
+    /* border: solid green; */
+    border-radius: 50px;
+    border: solid green;
+    border-style: inset;
+}
+
+#tcon {
+    height: fit-content;
+    width: fit-content;
+    margin: 12px;
+    margin-left: 25%;
+}
+
+#loader {
+    position: absolute;
+    display: none;
+    border: 10px solid #f3f3f3;
+    border-radius: 150%;
+    border-top: 10px solid #3498db;
+    width: 120px;
+    height: 120px;
+    height: 16%;
+    width: 16%;
+    top: 46.2%;
+    left: 42%;
+    right: 0;
+    bottom: 0;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

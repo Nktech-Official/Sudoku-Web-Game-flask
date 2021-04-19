@@ -1,0 +1,274 @@
+{% extends 'template.html' %} {% block body %}
+
+<body onload='act("Home")'>{% endblock body %} {% block content %}
+    <div id="tcon"><span>Time: </span><span id="time">00:00:00</span></div>
+    <script>
+    </script>
+    <div class="outputs">
+        <div id="game-grid">
+            <div id="table">
+                <table>
+
+                    <tbody>
+                        <tr>
+                            <td class="nav">
+                                </td/>
+                                <th class="nav">1</th>
+                                <th class="nav">2</th>
+                                <th class="nav">3</th>
+                                <th class="nav">4</th>
+                                <th class="nav">5</th>
+                                <th class="nav">6</th>
+                                <th class="nav">7</th>
+                                <th class="nav">8</th>
+                                <th class="nav">9</th>
+                        </tr>
+                        <tr id="row1">
+                            <th class="nav">A</th>
+                            <td id="cell-A1"><input id="cell_A1" type="number" onkeydown="setInputFilter((document.getElementById('cell_A1')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row1 col1 grid1"
+                                    autocomplete="off"></td>
+                            <td id="cell-A2"><input id="cell_A2" type="number" onkeydown="setInputFilter((document.getElementById('cell_A2')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row1 col2 grid1"
+                                    autocomplete="off"></td>
+                            <td id="cell-A3"><input id="cell_A3" type="number" onkeydown="setInputFilter((document.getElementById('cell_A3')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row1 col3 grid1"
+                                    autocomplete="off"></td>
+                            <td id="cell-A4"><input id="cell_A4" type="number" onkeydown="setInputFilter((document.getElementById('cell_A4')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row1 col4 grid2"
+                                    autocomplete="off"></td>
+                            <td id="cell-A5"><input id="cell_A5" type="number" onkeydown="setInputFilter((document.getElementById('cell_A5')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row1 col5 grid2"
+                                    autocomplete="off"></td>
+                            <td id="cell-A6"><input id="cell_A6" type="number" onkeydown="setInputFilter((document.getElementById('cell_A6')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row1 col6 grid2"
+                                    autocomplete="off"></td>
+                            <td id="cell-A7"><input id="cell_A7" type="number" onkeydown="setInputFilter((document.getElementById('cell_A7')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row1 col7 grid3"
+                                    autocomplete="off"></td>
+                            <td id="cell-A8"><input id="cell_A8" type="number" onkeydown="setInputFilter((document.getElementById('cell_A8')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row1 col8 grid3"
+                                    autocomplete="off"></td>
+                            <td id="cell-A9"><input id="cell_A9" type="number" onkeydown="setInputFilter((document.getElementById('cell_A9')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row1 col9 grid3"
+                                    autocomplete="off"></td>
+
+
+                        </tr>
+
+                        <tr id="row2">
+                            <th class="nav">B</th>
+
+                            <td id="cell-B1"><input id="cell_B1" type="number" onkeydown="setInputFilter((document.getElementById('cell_B1')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row2 col1 grid1"
+                                    autocomplete="off"></td>
+                            <td id="cell-B2"><input id="cell_B2" type="number" onkeydown="setInputFilter((document.getElementById('cell_B2')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row2 col2 grid1"
+                                    autocomplete="off"></td>
+                            <td id="cell-B3"><input id="cell_B3" type="number" onkeydown="setInputFilter((document.getElementById('cell_B3')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row2 col3 grid1"
+                                    autocomplete="off"></td>
+                            <td id="cell-B4"><input id="cell_B4" type="number" onkeydown="setInputFilter((document.getElementById('cell_B4')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row2 col4 grid2"
+                                    autocomplete="off"></td>
+                            <td id="cell-B5"><input id="cell_B5" type="number" onkeydown="setInputFilter((document.getElementById('cell_B5')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row2 col5 grid2"
+                                    autocomplete="off"></td>
+                            <td id="cell-B6"><input id="cell_B6" type="number" onkeydown="setInputFilter((document.getElementById('cell_B6')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row2 col6 grid2"
+                                    autocomplete="off"></td>
+                            <td id="cell-B7"><input id="cell_B7" type="number" onkeydown="setInputFilter((document.getElementById('cell_B7')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row2 col7 grid3"
+                                    autocomplete="off"></td>
+                            <td id="cell-B8"><input id="cell_B8" type="number" onkeydown="setInputFilter((document.getElementById('cell_B8')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row2 col8 grid3"
+                                    autocomplete="off"></td>
+                            <td id="cell-B9"><input id="cell_B9" type="number" onkeydown="setInputFilter((document.getElementById('cell_B9')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row2 col9 grid3"
+                                    autocomplete="off"></td>
+
+
+                        </tr>
+                        <tr id="row3">
+                            <th class="nav">C</th>
+
+                            <td id="cell-C1"><input id="cell_C1" type="number" onkeydown="setInputFilter((document.getElementById('cell_C1')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row3 col1 grid1"
+                                    autocomplete="off"></td>
+                            <td id="cell-C2"><input id="cell_C2" type="number" onkeydown="setInputFilter((document.getElementById('cell_C2')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row3 col2 grid1"
+                                    autocomplete="off"></td>
+                            <td id="cell-C3"><input id="cell_C3" type="number" onkeydown="setInputFilter((document.getElementById('cell_C3')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row3 col3 grid1"
+                                    autocomplete="off"></td>
+                            <td id="cell-C4"><input id="cell_C4" type="number" onkeydown="setInputFilter((document.getElementById('cell_C4')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row3 col4 grid2"
+                                    autocomplete="off"></td>
+                            <td id="cell-C5"><input id="cell_C5" type="number" onkeydown="setInputFilter((document.getElementById('cell_C5')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row3 col5 grid2"
+                                    autocomplete="off"></td>
+                            <td id="cell-C6"><input id="cell_C6" type="number" onkeydown="setInputFilter((document.getElementById('cell_C6')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row3 col6 grid2"
+                                    autocomplete="off"></td>
+                            <td id="cell-C7"><input id="cell_C7" type="number" onkeydown="setInputFilter((document.getElementById('cell_C7')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row3 col7 grid3"
+                                    autocomplete="off"></td>
+                            <td id="cell-C8"><input id="cell_C8" type="number" onkeydown="setInputFilter((document.getElementById('cell_C8')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row3 col8 grid3"
+                                    autocomplete="off"></td>
+                            <td id="cell-C9"><input id="cell_C9" type="number" onkeydown="setInputFilter((document.getElementById('cell_C9')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row3 col9 grid3"
+                                    autocomplete="off"></td>
+
+
+                        </tr>
+                        <tr id="row4">
+                            <th class="nav">D</th>
+
+                            <td id="cell-D1"><input id="cell_D1" type="number" onkeydown="setInputFilter((document.getElementById('cell_D1')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row4 col1 grid4"
+                                    autocomplete="off"></td>
+                            <td id="cell-D2"><input id="cell_D2" type="number" onkeydown="setInputFilter((document.getElementById('cell_D2')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row4 col2 grid4"
+                                    autocomplete="off"></td>
+                            <td id="cell-D3"><input id="cell_D3" type="number" onkeydown="setInputFilter((document.getElementById('cell_D3')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row4 col3 grid4"
+                                    autocomplete="off"></td>
+                            <td id="cell-D4"><input id="cell_D4" type="number" onkeydown="setInputFilter((document.getElementById('cell_D4')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row4 col4 grid5"
+                                    autocomplete="off"></td>
+                            <td id="cell-D5"><input id="cell_D5" type="number" onkeydown="setInputFilter((document.getElementById('cell_D5')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row4 col5 grid5"
+                                    autocomplete="off"></td>
+                            <td id="cell-D6"><input id="cell_D6" type="number" onkeydown="setInputFilter((document.getElementById('cell_D6')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row4 col6 grid5"
+                                    autocomplete="off"></td>
+                            <td id="cell-D7"><input id="cell_D7" type="number" onkeydown="setInputFilter((document.getElementById('cell_D7')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row4 col7 grid6"
+                                    autocomplete="off"></td>
+                            <td id="cell-D8"><input id="cell_D8" type="number" onkeydown="setInputFilter((document.getElementById('cell_D8')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row4 col8 grid6"
+                                    autocomplete="off"></td>
+                            <td id="cell-D9"><input id="cell_D9" type="number" onkeydown="setInputFilter((document.getElementById('cell_D9')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row4 col9 grid6"
+                                    autocomplete="off"></td>
+                        </tr>
+                        <tr id="row5">
+                            <th class="nav">E</th>
+
+
+                            <td id="cell-E1"><input id="cell_E1" type="number" onkeydown="setInputFilter((document.getElementById('cell_E1')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row5 col1 grid4"
+                                    autocomplete="off"></td>
+                            <td id="cell-E2"><input id="cell_E2" type="number" onkeydown="setInputFilter((document.getElementById('cell_E2')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row5 col2 grid4"
+                                    autocomplete="off"></td>
+                            <td id="cell-E3"><input id="cell_E3" type="number" onkeydown="setInputFilter((document.getElementById('cell_E3')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row5 col3 grid4"
+                                    autocomplete="off"></td>
+                            <td id="cell-E4"><input id="cell_E4" type="number" onkeydown="setInputFilter((document.getElementById('cell_E4')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row5 col4 grid5"
+                                    autocomplete="off"></td>
+                            <td id="cell-E5"><input id="cell_E5" type="number" onkeydown="setInputFilter((document.getElementById('cell_E5')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row5 col5 grid5"
+                                    autocomplete="off"></td>
+                            <td id="cell-E6"><input id="cell_E6" type="number" onkeydown="setInputFilter((document.getElementById('cell_E6')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row5 col6 grid5"
+                                    autocomplete="off"></td>
+                            <td id="cell-E7"><input id="cell_E7" type="number" onkeydown="setInputFilter((document.getElementById('cell_E7')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row5 col7 grid6"
+                                    autocomplete="off"></td>
+                            <td id="cell-E8"><input id="cell_E8" type="number" onkeydown="setInputFilter((document.getElementById('cell_E8')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row5 col8 grid6"
+                                    autocomplete="off"></td>
+                            <td id="cell-E9"><input id="cell_E9" type="number" onkeydown="setInputFilter((document.getElementById('cell_E9')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row5 col9 grid6"
+                                    autocomplete="off"></td>
+
+                        </tr>
+                        <tr id="row6">
+                            <th class="nav">F</th>
+
+                            <td id="cell-F1"><input id="cell_F1" type="number" onkeydown="setInputFilter((document.getElementById('cell_F1')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row6 col1 grid4"
+                                    autocomplete="off"></td>
+                            <td id="cell-F2"><input id="cell_F2" type="number" onkeydown="setInputFilter((document.getElementById('cell_F2')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row6 col2 grid4"
+                                    autocomplete="off"></td>
+                            <td id="cell-F3"><input id="cell_F3" type="number" onkeydown="setInputFilter((document.getElementById('cell_F3')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row6 col3 grid4"
+                                    autocomplete="off"></td>
+                            <td id="cell-F4"><input id="cell_F4" type="number" onkeydown="setInputFilter((document.getElementById('cell_F4')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row6 col4 grid5"
+                                    autocomplete="off"></td>
+                            <td id="cell-F5"><input id="cell_F5" type="number" onkeydown="setInputFilter((document.getElementById('cell_F5')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row6 col5 grid5"
+                                    autocomplete="off"></td>
+                            <td id="cell-F6"><input id="cell_F6" type="number" onkeydown="setInputFilter((document.getElementById('cell_F6')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row6 col6 grid5"
+                                    autocomplete="off"></td>
+                            <td id="cell-F7"><input id="cell_F7" type="number" onkeydown="setInputFilter((document.getElementById('cell_F7')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row6 col7 grid6"
+                                    autocomplete="off"></td>
+                            <td id="cell-F8"><input id="cell_F8" type="number" onkeydown="setInputFilter((document.getElementById('cell_F8')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row6 col8 grid6"
+                                    autocomplete="off"></td>
+                            <td id="cell-F9"><input id="cell_F9" type="number" onkeydown="setInputFilter((document.getElementById('cell_F9')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row6 col9 grid6"
+                                    autocomplete="off"></td>
+
+                        </tr>
+                        <tr id="row7">
+                            <th class="nav">G</th>
+
+
+                            <td id="cell-G1"><input id="cell_G1" type="number" onkeydown="setInputFilter((document.getElementById('cell_G1')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row7 col1 grid7"
+                                    autocomplete="off"></td>
+                            <td id="cell-G2"><input id="cell_G2" type="number" onkeydown="setInputFilter((document.getElementById('cell_G2')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row7 col2 grid7"
+                                    autocomplete="off"></td>
+                            <td id="cell-G3"><input id="cell_G3" type="number" onkeydown="setInputFilter((document.getElementById('cell_G3')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row7 col3 grid7"
+                                    autocomplete="off"></td>
+                            <td id="cell-G4"><input id="cell_G4" type="number" onkeydown="setInputFilter((document.getElementById('cell_G4')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row7 col4 grid8"
+                                    autocomplete="off"></td>
+                            <td id="cell-G5"><input id="cell_G5" type="number" onkeydown="setInputFilter((document.getElementById('cell_G5')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row7 col5 grid8"
+                                    autocomplete="off"></td>
+                            <td id="cell-G6"><input id="cell_G6" type="number" onkeydown="setInputFilter((document.getElementById('cell_G6')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row7 col6 grid8"
+                                    autocomplete="off"></td>
+                            <td id="cell-G7"><input id="cell_G7" type="number" onkeydown="setInputFilter((document.getElementById('cell_G7')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row7 col7 grid9"
+                                    autocomplete="off"></td>
+                            <td id="cell-G8"><input id="cell_G8" type="number" onkeydown="setInputFilter((document.getElementById('cell_G8')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row7 col8 grid9"
+                                    autocomplete="off"></td>
+                            <td id="cell-G9"><input id="cell_G9" type="number" onkeydown="setInputFilter((document.getElementById('cell_G9')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row7 col9 grid9"
+                                    autocomplete="off"></td>
+
+                        </tr>
+                        <tr id="row8">
+                            <th class="nav">H</th>
+
+                            <td id="cell-H1"><input id="cell_H1" type="number" onkeydown="setInputFilter((document.getElementById('cell_H1')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row8 col1 grid7"
+                                    autocomplete="off"></td>
+                            <td id="cell-H2"><input id="cell_H2" type="number" onkeydown="setInputFilter((document.getElementById('cell_H2')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row8 col2 grid7"
+                                    autocomplete="off"></td>
+                            <td id="cell-H3"><input id="cell_H3" type="number" onkeydown="setInputFilter((document.getElementById('cell_H3')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row8 col3 grid7"
+                                    autocomplete="off"></td>
+                            <td id="cell-H4"><input id="cell_H4" type="number" onkeydown="setInputFilter((document.getElementById('cell_H4')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row8 col4 grid8"
+                                    autocomplete="off"></td>
+                            <td id="cell-H5"><input id="cell_H5" type="number" onkeydown="setInputFilter((document.getElementById('cell_H5')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row8 col5 grid8"
+                                    autocomplete="off"></td>
+                            <td id="cell-H6"><input id="cell_H6" type="number" onkeydown="setInputFilter((document.getElementById('cell_H6')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row8 col6 grid8"
+                                    autocomplete="off"></td>
+                            <td id="cell-H7"><input id="cell_H7" type="number" onkeydown="setInputFilter((document.getElementById('cell_H7')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row8 col7 grid9"
+                                    autocomplete="off"></td>
+                            <td id="cell-H8"><input id="cell_H8" type="number" onkeydown="setInputFilter((document.getElementById('cell_H8')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row8 col8 grid9"
+                                    autocomplete="off"></td>
+                            <td id="cell-H9"><input id="cell_H9" type="number" onkeydown="setInputFilter((document.getElementById('cell_H9')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row8 col9 grid9"
+                                    autocomplete="off"></td>
+
+                        </tr>
+                        <tr id="row9">
+                            <th class="nav">I</th>
+
+
+                            <td id="cell-I1"><input id="cell_I1" type="number" onkeydown="setInputFilter((document.getElementById('cell_I1')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row9 col1 grid7"
+                                    autocomplete="off"></td>
+                            <td id="cell-I2"><input id="cell_I2" type="number" onkeydown="setInputFilter((document.getElementById('cell_I2')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row9 col2 grid7"
+                                    autocomplete="off"></td>
+                            <td id="cell-I3"><input id="cell_I3" type="number" onkeydown="setInputFilter((document.getElementById('cell_I3')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row9 col3 grid7"
+                                    autocomplete="off"></td>
+                            <td id="cell-I4"><input id="cell_I4" type="number" onkeydown="setInputFilter((document.getElementById('cell_I4')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row9 col4 grid8"
+                                    autocomplete="off"></td>
+                            <td id="cell-I5"><input id="cell_I5" type="number" onkeydown="setInputFilter((document.getElementById('cell_I5')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row9 col5 grid8"
+                                    autocomplete="off"></td>
+                            <td id="cell-I6"><input id="cell_I6" type="number" onkeydown="setInputFilter((document.getElementById('cell_I6')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row9 col6 grid8"
+                                    autocomplete="off"></td>
+                            <td id="cell-I7"><input id="cell_I7" type="number" onkeydown="setInputFilter((document.getElementById('cell_I7')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row9 col7 grid9"
+                                    autocomplete="off"></td>
+                            <td id="cell-I8"><input id="cell_I8" type="number" onkeydown="setInputFilter((document.getElementById('cell_I8')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row9 col8 grid9"
+                                    autocomplete="off"></td>
+                            <td id="cell-I9"><input id="cell_I9" type="number" onkeydown="setInputFilter((document.getElementById('cell_I9')), function(value) {return /^\d*$/.test(value) && (value === '' || parseInt(value) >0 && parseInt(value)<=9);});" class="Input row9 col9 grid9"
+                                    autocomplete="off"></td>
+
+                        </tr>
+                    </tbody>
+
+
+                </table>
+            </div>
+            <div id="loader"></div>
+            <div id="overlay"><span class="fa fa-play" height="100px" width="100px" src="{{url_for('static',filename='/icon/play-button.png')}}" id="fa-play" onclick="off()"></span>
+            </div>
+
+        </div>
+    </div>
+    <br/>
+    <label class="container">Easy
+                    <input id="Easy" type="radio" value="Easy" checked="checked" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+    <label class="container">Medium
+                    <input id="Medium"  type="radio" value="Medium" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+    <label class="container">Hard
+                    <input id="Hard" type="radio" value="Hard" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+    <label class="container">Insane
+                    <input id="Insane" type="radio" value="Insane" name="radio">
+                    <span class="checkmark"></span>
+                </label>
+
+    <div style="clear:left">
+        <button id="newGame">Start New Game</button>
+        <button id="pause" onclick="on()">pause</button>
+        <button id="check">Check Solution</button>
+    </div>
+
+
+    {% endblock content %}
