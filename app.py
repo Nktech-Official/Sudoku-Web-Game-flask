@@ -212,7 +212,6 @@ def SolveSudoku():
         
 
     )
-        
 
 
 @app.route("/about")
