@@ -2,5 +2,5 @@
 /.vscode/
 # Ignore Virtual ENV
 /sudoku/
-# Ignore pychace
+# Ignore pycache
 __pycache__
