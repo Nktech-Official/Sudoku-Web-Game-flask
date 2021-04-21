@@ -13,7 +13,8 @@
 2. Html (not a language)
 3. JavaScript & jquery (ajax)
 4. cascadle style sheet (css) 
-    Python is used to generate the sudoku and solve it . Javascript and Jquery is used to send data to backend python server and show the result in frontend and various logical operation in frontend 
+
+ Python is used to generate the sudoku and solve it . Javascript and Jquery is used to send data to backend python server and show the result in frontend and various logical operation in frontend 
     CSS for styling .
 
 I think that's enough.
