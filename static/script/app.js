@@ -359,7 +359,7 @@ $(document).keydown(function(e) {
     var $next = null;
     var focusableQuery = 'input:visible,select:visible,textarea:visible';
     var position = parseInt($active.closest('td').index()) + 1;
-    console.log('position :', position);
+    // console.log('position :', position);
     switch (e.keyCode) {
         case 37: // <Left>
             $next = $active.parent('td').prev().find(focusableQuery);
