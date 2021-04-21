@@ -1,4 +1,4 @@
-# Ignore VS code setting
+# Ignore VS code settings
 /.vscode/
 # Ignore Virtual Environment
 /sudoku/
