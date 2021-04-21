@@ -3,4 +3,4 @@
 # Ignore Virtual ENV
 /sudoku/
 # Ignore pychace
-__pychace__
+__pychace__/
