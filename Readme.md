@@ -18,4 +18,4 @@
     CSS for styling .
 
 I think that's enough.
-one more think I am open to collab so you can updated the source code and put it on your repo or can send pull request jsut mail me at backend.nktechnical@gmail.com after making request or you can report a bug.
+one more think I am open to collab so you can updated the source code and put it on your repo or can send pull request just mail me at backend.nktechnical@gmail.com after making request or you can report a bug.
