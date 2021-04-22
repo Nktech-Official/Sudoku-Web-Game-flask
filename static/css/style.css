@@ -515,37 +515,13 @@ input[type=number] {
 #loader {
     position: absolute;
     display: none;
-    border: 10px solid #f3f3f3;
-    border-radius: 150%;
-    border-top: 10px solid #3498db;
-    width: 120px;
+    width: 143px;
     height: 120px;
-    height: 16%;
-    width: 16%;
-    top: 46.2%;
-    left: 42%;
+    height: 40%;
+    width: 40%;
+    top: 34.2%;
+    left: 33%;
     right: 0;
     bottom: 0;
-    -webkit-animation: spin 2s linear infinite;
-    /* Safari */
-    animation: spin 2s linear infinite;
     z-index: 1000;
-}
-
-@-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-    }
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
 }

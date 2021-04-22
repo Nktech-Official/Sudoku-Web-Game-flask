@@ -137,7 +137,7 @@ $(document).on("click", "#newGame", function() {
     });
 });
 $(document).on("click", "#check", function() {
-
+    $("#loader").css({ "display": "block" })
     cell = []
     var c,
         list = ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
@@ -191,6 +191,7 @@ $(document).on("click", "#check", function() {
             row8: JSON.stringify(row8),
             row9: JSON.stringify(row9),
         }
+
     });
 
     req.done(function(data) {
@@ -200,6 +201,7 @@ $(document).on("click", "#check", function() {
             $(cell[i]).val(data[j])
             i++;
         }
+        $("#loader").css({ "display": "none" })
         pause();
     });
 });
