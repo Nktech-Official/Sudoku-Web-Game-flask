@@ -15,6 +15,9 @@ function setInputFilter(textbox, inputFilter) {
         });
     });
 }
+$(document).on("keydown", ".Input", function() {
+    setInputFilter(this, function(value) { return /^\d*$/.test(value) && (value === '' || parseInt(value) > 0 && parseInt(value) <= 9); });
+});
 let newgame = "true";
 
 function active(id) {
