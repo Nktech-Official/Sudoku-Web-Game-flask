@@ -10,7 +10,7 @@
 ## Now let's Talk about code:
  As the name suggest this web app or website is made with the help of flask frame-work of python and you can see the percentage of language used on the github Lanuguage used
 1. python (Flask-Framework)
-2. Html (not a language)
+2. Html 
 3. JavaScript & jquery (ajax)
 4. cascadle style sheet (css) 
 
