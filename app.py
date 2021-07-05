@@ -18,6 +18,9 @@ def rowList(item):
 # @app.route("/")
 # def Home():
 #     return render_template("index.html")
+@app.route("/googlee2dc31cef81dd8eb.html",methods=["POST","GET"])
+def siteVerification():
+    return render_template("googlee2dc31cef81dd8eb.html")
 @app.route("/",methods=["POST","GET"])
 def Index():
     if request.method == 'POST':
