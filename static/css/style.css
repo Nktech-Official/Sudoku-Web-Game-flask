@@ -519,3 +519,12 @@ input[type=number] {
     display: grid;
     justify-content: center;
 }
+
+/* toggle-button */
+#toggle-button{
+    background-color:black;
+    border-radius: 10px;
+    float:right;
+    margin-right: 30px;
+    font-size: 17px;
+}
