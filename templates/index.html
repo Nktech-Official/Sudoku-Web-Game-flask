@@ -10,7 +10,7 @@
 document.getElementById('try').style.display = "block";
 document.getElementById('texto').innerHTML = "Please Select the level first then start with the game!!!";
 
- document.getElementById('levelstatus').innerHTML = "LEVEL :" + selectedOption;
+ document.getElementById('levelstatus').innerHTML = "LEVEL : " + selectedOption.toUpperCase();
      console.log(selectedOption);
 
 }
@@ -18,7 +18,7 @@ else{
     selectedOption  = $("input:radio[name=radio]:checked").val();
 document.getElementById('try').style.display = "none";
 document.getElementById('texto').innerHTML = "";
-document.getElementById('levelstatus').innerHTML = "LEVEL :" + selectedOption;
+document.getElementById('levelstatus').innerHTML = "LEVEL : " + selectedOption.toUpperCase();
 
 
 }
@@ -28,8 +28,8 @@ document.getElementById('levelstatus').innerHTML = "LEVEL :" + selectedOption;
   
 
     <div class="outputs">
-        <div id="tcon"><span>Time: </span><span id="time">00:00:00</span></div>
-       <p id = "levelstatus"> LEVEL : Select Level</p>
+        <div id="tcon" style="text-align: center;"><span>Time: </span><span id="time">00:00:00</span></div>
+        <div id="levelcss" style="text-align: center;"><p id = "levelstatus"> LEVEL : Select Level</p></div>
         <div id="game-grid">
             <div id="table">
                 <table>
@@ -210,14 +210,14 @@ document.getElementById('levelstatus').innerHTML = "LEVEL :" + selectedOption;
                        
                         
              </div>
-        
-            <div style="clear:left">
+             
+         <div class="flex-container">
                
-                <button id="newGame" onclick="showDiv()">Start New Game</button>
-                <button id="pause" onclick="on();">pause</button>
-                <button id="check">Check Solution</button>
+                <button id="newGame"  class = "flex-item-1" onclick="showDiv()">Start New Game</button>
+                <button id="pause"  class = "flex-item-2" onclick="on();">Pause</button>
+                <button id="check" class = "flex-item-3">Check Solution</button>
             </div>
-           
+         
   
            
     {% endblock content %}
