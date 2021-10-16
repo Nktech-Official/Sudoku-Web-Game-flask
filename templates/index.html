@@ -1,10 +1,35 @@
 {% extends 'template.html' %} {% block body %}
 
 <body onload='act("Home")'>{% endblock body %} {% block content %}
+    
+    <script>
+   var selectedOption  = "";
+        function showDiv() {
+           
+            if (document.getElementById('try').style.display == "none"){
+document.getElementById('try').style.display = "block";
+document.getElementById('texto').innerHTML = "Please Select the level first then start with the game!!!";
+
+ document.getElementById('levelstatus').innerHTML = "LEVEL :" + selectedOption;
+     console.log(selectedOption);
+
+}
+else{
+    selectedOption  = $("input:radio[name=radio]:checked").val();
+document.getElementById('try').style.display = "none";
+document.getElementById('texto').innerHTML = "";
+document.getElementById('levelstatus').innerHTML = "LEVEL :" + selectedOption;
+
+
+}
+}
+
+    </script>
   
 
     <div class="outputs">
         <div id="tcon"><span>Time: </span><span id="time">00:00:00</span></div>
+       <p id = "levelstatus"> LEVEL : Select Level</p>
         <div id="game-grid">
             <div id="table">
                 <table>
@@ -167,8 +192,9 @@
     </div>
     <br/>
 
-            <div class="labels" >
-             
+            <div class="labels " id="try" style="display: none;">
+            
+                <p id="texto">Please Select the level first then start with the game!!!</p>
                 <label class="container">Easy
                             <input id="Easy" type="radio" value="Easy" checked="checked" name="radio">
                             <span class="checkmark"></span>
@@ -183,13 +209,15 @@
                           </label>
                        
                         
-             
+             </div>
         
             <div style="clear:left">
-                <button id="newGame" onclick="myFunction2()">Start New Game</button>
-                <button id="pause" onclick="on();myFunction()">pause</button>
+               
+                <button id="newGame" onclick="showDiv()">Start New Game</button>
+                <button id="pause" onclick="on();">pause</button>
                 <button id="check">Check Solution</button>
             </div>
            
-           </div>
+  
+           
     {% endblock content %}
