@@ -1,6 +1,7 @@
 {% extends 'template.html' %} {% block body %}
 
 <body onload='act("Home")'>{% endblock body %} {% block content %}
+  
 
     <div class="outputs">
         <div id="tcon"><span>Time: </span><span id="time">00:00:00</span></div>
@@ -165,26 +166,30 @@
         </div>
     </div>
     <br/>
-    <div class="labels">
-        <label class="container">Easy
-                    <input id="Easy" type="radio" value="Easy" checked="checked" name="radio">
-                    <span class="checkmark"></span>
-                  </label>
-        <label class="container">Medium
-                    <input id="Medium"  type="radio" value="Medium" name="radio">
-                    <span class="checkmark"></span>
-                  </label>
-        <label class="container">Hard
-                    <input id="Hard" type="radio" value="Hard" name="radio">
-                    <span class="checkmark"></span>
-                  </label>
 
-        <div style="clear:left">
-            <button id="newGame">Start New Game</button>
-            <button id="pause" onclick="on()">pause</button>
-            <button id="check">Check Solution</button>
-        </div>
-    </div>
-
-
+            <div class="labels" >
+             
+                <label class="container">Easy
+                            <input id="Easy" type="radio" value="Easy" checked="checked" name="radio">
+                            <span class="checkmark"></span>
+                          </label>
+                <label class="container">Medium
+                            <input id="Medium"  type="radio" value="Medium" name="radio">
+                            <span class="checkmark"></span>
+                          </label>
+                <label class="container">Hard
+                            <input id="Hard" type="radio" value="Hard" name="radio">
+                            <span class="checkmark"></span>
+                          </label>
+                       
+                        
+             
+        
+            <div style="clear:left">
+                <button id="newGame" onclick="myFunction2()">Start New Game</button>
+                <button id="pause" onclick="on();myFunction()">pause</button>
+                <button id="check">Check Solution</button>
+            </div>
+           
+           </div>
     {% endblock content %}
