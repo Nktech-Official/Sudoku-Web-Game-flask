@@ -12,6 +12,22 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="{{url_for('static',filename='script/app.js')}}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+        button{
+            cursor: pointer;
+            border: 2px solid #555;
+            text-align: center;
+            padding: 5px;
+            margin-left: 8px;
+            border-radius: 7px;
+            
+        }
+        .dark{
+            background-color: #222;
+            color: #e6e6e6;
+        }
+    </style>
 </head>
 
 {% block body %} {% endblock body %}
@@ -23,6 +39,13 @@
     <a href="javascript:void(0);" class="icon" onclick="repo_nav()">
         <i class="fa fa-bars"></i>
     </a>
+    <button onclick="myFunction()">Switch mode</button>
+    <script>
+        function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark");
+        }
+    </script>
 </div>
 
 
