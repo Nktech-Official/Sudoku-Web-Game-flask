@@ -22,10 +22,12 @@ def rowList(item):
 def siteVerification():
     return render_template("googlee2dc31cef81dd8eb.html")
 @app.route("/",methods=["POST","GET"])
+
 def Index():
+    
     if request.method == 'POST':
         level=request.form.get('level')
-    # print(level)
+        #print(level)
         New_Game=Gs.main(level)     
         return jsonify(
             cell_A1=str(New_Game[0,0]),
@@ -109,7 +111,7 @@ def Index():
             cell_I7=str(New_Game[8,6]),
             cell_I8=str(New_Game[8,7]),
             cell_I9=str(New_Game[8,8]),
-        )
+            )
     else:
         return render_template("index.html")
 
