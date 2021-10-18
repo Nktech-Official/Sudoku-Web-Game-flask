@@ -40,6 +40,38 @@ function repo_nav() {
 
 }
 
+// 1 means currently in normal mode and 0 means in dark mode 
+var mode=1;
+localStorage.setItem('mode', 1);
+
+function change_mode() {
+    mode=localStorage.getItem('mode');
+    if(mode===1) {
+        localStorage.setItem('mode', 0);
+        document.getElementsByTagName("body")[0].style.color="white";
+        document.getElementsByClassName("topnav").classlist.add("topnav-dark");
+        document.getElementsByTagName("td").classlist.add("dark");
+        document.getElementsByTagName("input").classlist.add("dark-inp");
+        document.getElementsByClassName("Input").classlist.add("Input-dark");
+        document.getElementsByClassName("checkmark").classlist.add("checkmark-dark");
+        document.getElementsByClassName("active").classlist.add("active-dark");
+        document.getElementsByClassName("focused").classlist.add("focused-dark");
+        document.getElementById("time").id="time-dark";
+    }
+    else {
+        localStorage.setItem('mode', 1);
+        document.getElementsByTagName("body")[0].style.color="black";
+        document.getElementsByClassName("topnav").classlist.remove("topnav-dark");
+        document.getElementsByTagName("td").classlist.remove("dark");
+        document.getElementsByTagName("input").classlist.remove("dark-inp");
+        document.getElementsByClassName("Input").classlist.remove("Input-dark");
+        document.getElementsByClassName("checkmark").classlist.remove("checkmark-dark");
+        document.getElementsByClassName("active").classlist.remove("active-dark");
+        document.getElementsByClassName("focused").classlist.remove("focused-dark");
+        document.getElementById("time-dark").id="time";
+    }
+}
+
 function checkBlank(row, c) {
     if ($(c).val() == "") {
         row.push("0");

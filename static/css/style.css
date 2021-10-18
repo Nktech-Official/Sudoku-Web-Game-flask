@@ -13,10 +13,26 @@ body {
     width: 100%;
 }
 
+.topnav-dark {
+    overflow: auto;
+    background-color: rgb(204, 204, 204) !important;
+    width: 100%;
+}
+
 .topnav a {
     float: left;
     display: block;
     color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav-dark a {
+    float: left;
+    display: block;
+    color: rgb(13, 13, 13) !important;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -28,9 +44,19 @@ body {
     color: black;
 }
 
+.topnav-dark a:hover {
+    background-color: rgb(34, 242, 255) !important;
+    color: white !important;
+}
+
 .topnav a.active {
     background-color: #4CAF50;
     color: white;
+}
+
+.topnav-dark a.active {
+    background-color: rgb(179, 80, 175) !important; 
+    color: black !important;
 }
 
 .topnav .icon {
@@ -84,6 +110,14 @@ td {
     border: 1px solid #666666;
 }
 
+.dark td {
+    margin: 0px;
+    padding: 0em;
+    width: 2px;
+    text-align: center;
+    border: 1px solid rgb(153, 153, 153) !important;
+}
+
 fieldset {
     width: auto;
     margin: 0 auto;
@@ -111,8 +145,26 @@ input {
     cursor: pointer;
 }
 
+.dark-inp input {
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+    font-size: x-large;
+    text-align: center;
+    color: transparent;
+    text-shadow: 0 0 0 orange !important;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+}
+
 .Input:hover {
     background-color: rgb(221, 238, 255);
+    outline: 0;
+}
+
+.Input-dark:hover {
+    background-color: rgb(34, 17, 0) !important;
     outline: 0;
 }
 
@@ -121,6 +173,18 @@ button {
     margin: 5px;
     color: #4CAF50;
     background-color: black;
+    border-radius: 10px;
+    font-size: larger;
+    font-style: italic;
+    text-align: center;
+    border: none;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    color: rgb(179, 80, 175) !important;
+    background-color: white !important;
     border-radius: 10px;
     font-size: larger;
     font-style: italic;
@@ -357,6 +421,15 @@ legend {
     border-radius: 50%;
 }
 
+.checkmark-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(17, 241, 255) !important;
+    border-radius: 50%;
+}
 
 /* On mouse-over, add a grey background color */
 
@@ -364,13 +437,11 @@ legend {
     background-color: #ccc;
 }
 
-
 /* When the radio button is checked, add a blue background */
 
 .container input:checked~.checkmark {
     background-color: #2196F3;
 }
-
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
 
@@ -403,9 +474,18 @@ legend {
     background-color: rgba(47, 96, 165, 0.192);
 }
 
+.active-dark {
+    background-color: rgba(208, 159, 90, 0.192) !important;
+}
+
 .active:hover {
     background-color: rgba(47, 96, 165, 0.192);
 }
+
+.active-dark:hover {
+    background-color: rgba(208, 159, 90, 0.192) !important;
+}
+
 
 .duplicate {
     background-color: rgba(243, 70, 70, 0.788);
@@ -415,8 +495,16 @@ legend {
     background-color: rgba(92, 208, 243, 0.37);
 }
 
+.focused-dark {
+    background-color: rgba(163, 47, 12, 0.37) !important;
+}
+
 .focused:hover {
     background-color: rgba(92, 208, 243, 0.37);
+}
+
+.focused-dark:hover {
+    background-color: rgba(163, 47, 12, 0.37) !important;
 }
 
 #game-grid {
@@ -490,6 +578,19 @@ input[type=number] {
     /* border: solid green; */
     border-radius: 50px;
     border: solid green;
+    border-style: inset;
+}
+
+#time-dark {
+    /* position: relative; */
+    height: fit-content;
+    width: fit-content;
+    margin-top: 15px;
+    padding: 5px;
+    /* margin */
+    /* border: solid green; */
+    border-radius: 50px;
+    border: solid red;
     border-style: inset;
 }
 
