@@ -1,9 +1,35 @@
 {% extends 'template.html' %} {% block body %}
 
 <body onload='act("Home")'>{% endblock body %} {% block content %}
+    
+    <script>
+   var selectedOption  = "";
+        function showDiv() {
+           
+            if (document.getElementById('try').style.display == "none"){
+document.getElementById('try').style.display = "block";
+document.getElementById('texto').innerHTML = "Please Select the level first then start with the game!!!";
+
+ document.getElementById('levelstatus').innerHTML = "LEVEL : " + selectedOption.toUpperCase();
+     console.log(selectedOption);
+
+}
+else{
+    selectedOption  = $("input:radio[name=radio]:checked").val();
+document.getElementById('try').style.display = "none";
+document.getElementById('texto').innerHTML = "";
+document.getElementById('levelstatus').innerHTML = "LEVEL : " + selectedOption.toUpperCase();
+
+
+}
+}
+
+    </script>
+  
 
     <div class="outputs">
-        <div id="tcon"><span>Time: </span><span id="time">00:00:00</span></div>
+        <div id="tcon" style="text-align: center;"><span>Time: </span><span id="time">00:00:00</span></div>
+        <div id="levelcss" style="text-align: center;"><p id = "levelstatus"> LEVEL : Select Level</p></div>
         <div id="game-grid">
             <div id="table">
                 <table>
@@ -165,26 +191,33 @@
         </div>
     </div>
     <br/>
-    <div class="labels">
-        <label class="container">Easy
-                    <input id="Easy" type="radio" value="Easy" checked="checked" name="radio">
-                    <span class="checkmark"></span>
-                  </label>
-        <label class="container">Medium
-                    <input id="Medium"  type="radio" value="Medium" name="radio">
-                    <span class="checkmark"></span>
-                  </label>
-        <label class="container">Hard
-                    <input id="Hard" type="radio" value="Hard" name="radio">
-                    <span class="checkmark"></span>
-                  </label>
 
-        <div style="clear:left">
-            <button id="newGame">Start New Game</button>
-            <button id="pause" onclick="on()">pause</button>
-            <button id="check">Check Solution</button>
-        </div>
-    </div>
-
-
+            <div class="labels " id="try" style="display: none;">
+            
+                <p id="texto">Please Select the level first then start with the game!!!</p>
+                <label class="container">Easy
+                            <input id="Easy" type="radio" value="Easy" checked="checked" name="radio">
+                            <span class="checkmark"></span>
+                          </label>
+                <label class="container">Medium
+                            <input id="Medium"  type="radio" value="Medium" name="radio">
+                            <span class="checkmark"></span>
+                          </label>
+                <label class="container">Hard
+                            <input id="Hard" type="radio" value="Hard" name="radio">
+                            <span class="checkmark"></span>
+                          </label>
+                       
+                        
+             </div>
+             
+         <div class="flex-container">
+               
+                <button id="newGame"  class = "flex-item-1" onclick="showDiv()">Start New Game</button>
+                <button id="pause"  class = "flex-item-2" onclick="on();">Pause</button>
+                <button id="check" class = "flex-item-3">Check Solution</button>
+            </div>
+         
+  
+           
     {% endblock content %}

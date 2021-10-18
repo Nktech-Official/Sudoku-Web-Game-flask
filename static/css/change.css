@@ -1,0 +1,74 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .flex-item-1 {
+  
+    padding: 10px;
+    flex: 50%;
+  }
+  
+  .flex-item-2 {
+  
+    padding: 10px;
+    flex: 50%;
+  }
+  .flex-item-3 {
+  
+    padding: 10px;
+    flex: 50%;
+  }
+  
+  /* Responsive layout - makes a one column-layout instead of two-column layout */
+  @media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    }
+  }
+  #levelcss{
+    height: fit-content;
+    width: fit-content;
+    margin: 12px;
+    margin-left: 20%;
+    
+  
+
+}
+#levelstatus{
+    color: #4CAF50;
+    background-color: black;
+    border-radius: 10px;
+    font-size: larger;
+    font-style: italic;
+    text-align: center;
+    border: none;
+    padding: 10px;
+}
+
+
+.labels {
+    margin: auto;
+    border: 1px solid black;
+}
+.labels label {
+   display: inline-block;
+    vertical-align: top;
+    margin-right: 3%;
+}
+.labels input {
+   display: inline-block;
+    vertical-align: top;
+}
+#try {
+    padding: 2%;
+  width: 50%;
+  margin: 0 auto;
+  background-color:#ccccff;
+  text-align: center;
+}
+input[type=radio]{
+    outline: 1px solid red
+}
