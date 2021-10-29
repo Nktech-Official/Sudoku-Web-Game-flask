@@ -392,3 +392,15 @@ $(document).keydown(function(e) {
         $next.focus();
     }
 });
+
+// function for dark/light mode toggle button
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+   var x = document.getElementById("myDIV");
+   if (x.innerHTML === "Dark Mode") {
+     x.innerHTML = "Light Mode";
+   } else {
+     x.innerHTML = "Dark Mode";
+   }
+}
