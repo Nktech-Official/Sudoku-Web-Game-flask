@@ -210,6 +210,84 @@ $(document).on("click", "#check", function() {
 });
 
 
+$(document).on("click", "#submitSolution", function() {
+    $("#loader").css({ "display": "block" })
+    cell = []
+    var c,
+        list = ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
+        row1 = [],
+        row2 = [],
+        row3 = [],
+        row4 = [],
+        row5 = [],
+        row6 = [],
+        row7 = [],
+        row8 = [],
+        row9 = [];
+
+    for (i in list) {
+        for (j = 1; j <= 9; j++) {
+            c = '#cell_' + list[i] + j;
+            cell.push(c)
+            if (list[i] == "A") {
+                checkBlank(row1, c);
+            } else if (list[i] == "B") {
+                checkBlank(row2, c);
+            } else if (list[i] == "C") {
+                checkBlank(row3, c);
+            } else if (list[i] == "D") {
+                checkBlank(row4, c);
+            } else if (list[i] == "E") {
+                checkBlank(row5, c);
+            } else if (list[i] == "F") {
+                checkBlank(row6, c);
+            } else if (list[i] == "G") {
+                checkBlank(row7, c);
+            } else if (list[i] == "H") {
+                checkBlank(row8, c);
+            } else if (list[i] == "I") {
+                checkBlank(row9, c);
+            }
+
+        };
+    };
+    req = $.ajax({
+        type: 'POST',
+        url: '/SolveSudoku',
+        data: {
+            row1: JSON.stringify(row1),
+            row2: JSON.stringify(row2),
+            row3: JSON.stringify(row3),
+            row4: JSON.stringify(row4),
+            row5: JSON.stringify(row5),
+            row6: JSON.stringify(row6),
+            row7: JSON.stringify(row7),
+            row8: JSON.stringify(row8),
+            row9: JSON.stringify(row9),
+        }
+
+    });
+
+    req.done(function(data) {
+        var isCorrect = true;
+        var i = 0;
+        for (j in data) {
+            const cellValue = $(cell[i]).val();
+            i++;
+            if (cellValue !== data[j]) {
+                isCorrect = false;
+                break;
+            }
+        }
+        $("#loader").css({ "display": "none" })
+        if (isCorrect) {
+            alert("Congratulations! You're winner");
+        } else {
+            alert("Your answer is not correct. Please try again!");
+        }
+    });
+});
+
 $(document).on("focus", ".Input", function() {
     clas = this.className;
     var classlist = clas.split(" ");
