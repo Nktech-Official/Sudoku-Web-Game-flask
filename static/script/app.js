@@ -136,11 +136,12 @@ $(document).on("click", "#newGame", function() {
 
 
         }
+        buildCurrentBoard();
         start();
     });
 });
-$(document).on("click", "#check", function() {
-    $("#loader").css({ "display": "block" })
+
+const buildCurrentBoard = function() {
     cell = []
     var c,
         list = ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
@@ -180,20 +181,27 @@ $(document).on("click", "#check", function() {
 
         };
     };
+
+    window.currentBoard = {
+        row1: JSON.stringify(row1),
+        row2: JSON.stringify(row2),
+        row3: JSON.stringify(row3),
+        row4: JSON.stringify(row4),
+        row5: JSON.stringify(row5),
+        row6: JSON.stringify(row6),
+        row7: JSON.stringify(row7),
+        row8: JSON.stringify(row8),
+        row9: JSON.stringify(row9),
+    }
+}
+
+$(document).on("click", "#check", function() {
+    $("#loader").css({ "display": "block" })
+
     req = $.ajax({
         type: 'POST',
         url: '/SolveSudoku',
-        data: {
-            row1: JSON.stringify(row1),
-            row2: JSON.stringify(row2),
-            row3: JSON.stringify(row3),
-            row4: JSON.stringify(row4),
-            row5: JSON.stringify(row5),
-            row6: JSON.stringify(row6),
-            row7: JSON.stringify(row7),
-            row8: JSON.stringify(row8),
-            row9: JSON.stringify(row9),
-        }
+        data: window.currentBoard
 
     });
 
@@ -206,9 +214,47 @@ $(document).on("click", "#check", function() {
         }
         $("#loader").css({ "display": "none" })
         pause();
+    }).fail(function(res) {
+        $("#loader").css({ "display": "none" })
+    });;
+});
+
+
+$(document).on("click", "#submitSolution", function() {
+    $("#loader").css({ "display": "block" })
+    
+    req = $.ajax({
+        type: 'POST',
+        url: '/SolveSudoku',
+        data: window.currentBoard
+    });
+
+    req.done(function(data) {
+        var isCorrect = true;
+        var i = 0;
+        for (j in data) {
+            const cellValue = $(cell[i]).val();
+            i++;
+            if (cellValue !== data[j]) {
+                isCorrect = false;
+                break;
+            }
+        }
+        $("#loader").css({ "display": "none" })
+        if (isCorrect) {
+            showResultDialog("Congratulations! You're winner")
+        } else {
+            showResultDialog("Your answer is not correct. Please try again!")
+        }
+    }).fail(function(res) {
+        $("#loader").css({ "display": "none" })
     });
 });
 
+const showResultDialog = function (message) {
+    document.getElementsByClassName("modal-result-message")[0].innerHTML = message;
+    document.getElementById("resultModal").style.display = "block";
+}
 
 $(document).on("focus", ".Input", function() {
     clas = this.className;
@@ -404,3 +450,18 @@ function myFunction() {
      x.innerHTML = "Dark Mode";
    }
 }
+
+// When document is ready
+$(function() {
+    var modal = document.getElementById("resultModal");
+    var span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
