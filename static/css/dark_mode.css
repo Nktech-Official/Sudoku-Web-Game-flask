@@ -32,3 +32,9 @@
     .dark-mode #toggle-button{
         background-color:white;
     }
+    .dark-mode #submitSolution{
+        background-color: white;
+    }
+    .dark-mode #modal-result-message{
+        color: black;
+    }
