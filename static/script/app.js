@@ -136,12 +136,11 @@ $(document).on("click", "#newGame", function() {
 
 
         }
-        buildCurrentBoard();
         start();
     });
 });
-
-const buildCurrentBoard = function() {
+$(document).on("click", "#check", function() {
+    $("#loader").css({ "display": "block" })
     cell = []
     var c,
         list = ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
@@ -181,27 +180,20 @@ const buildCurrentBoard = function() {
 
         };
     };
-
-    window.currentBoard = {
-        row1: JSON.stringify(row1),
-        row2: JSON.stringify(row2),
-        row3: JSON.stringify(row3),
-        row4: JSON.stringify(row4),
-        row5: JSON.stringify(row5),
-        row6: JSON.stringify(row6),
-        row7: JSON.stringify(row7),
-        row8: JSON.stringify(row8),
-        row9: JSON.stringify(row9),
-    }
-}
-
-$(document).on("click", "#check", function() {
-    $("#loader").css({ "display": "block" })
-
     req = $.ajax({
         type: 'POST',
         url: '/SolveSudoku',
-        data: window.currentBoard
+        data: {
+            row1: JSON.stringify(row1),
+            row2: JSON.stringify(row2),
+            row3: JSON.stringify(row3),
+            row4: JSON.stringify(row4),
+            row5: JSON.stringify(row5),
+            row6: JSON.stringify(row6),
+            row7: JSON.stringify(row7),
+            row8: JSON.stringify(row8),
+            row9: JSON.stringify(row9),
+        }
 
     });
 
@@ -214,42 +206,9 @@ $(document).on("click", "#check", function() {
         }
         $("#loader").css({ "display": "none" })
         pause();
-    }).fail(function(res) {
-        $("#loader").css({ "display": "none" })
-    });;
-});
-
-
-$(document).on("click", "#submitSolution", function() {
-    $("#loader").css({ "display": "block" })
-    
-    req = $.ajax({
-        type: 'POST',
-        url: '/SolveSudoku',
-        data: window.currentBoard
-    });
-
-    req.done(function(data) {
-        var isCorrect = true;
-        var i = 0;
-        for (j in data) {
-            const cellValue = $(cell[i]).val();
-            i++;
-            if (cellValue !== data[j]) {
-                isCorrect = false;
-                break;
-            }
-        }
-        $("#loader").css({ "display": "none" })
-        if (isCorrect) {
-            alert("Congratulations! You're winner");
-        } else {
-            alert("Your answer is not correct. Please try again!");
-        }
-    }).fail(function(res) {
-        $("#loader").css({ "display": "none" })
     });
 });
+
 
 $(document).on("focus", ".Input", function() {
     clas = this.className;

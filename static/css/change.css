@@ -5,10 +5,21 @@
     text-align: center;
   }
   
-  .flex-item-1, .flex-item-2, .flex-item-3, .flex-item-4 {
+  .flex-item-1 {
+  
     padding: 10px;
     flex: 50%;
-    cursor: pointer;
+  }
+  
+  .flex-item-2 {
+  
+    padding: 10px;
+    flex: 50%;
+  }
+  .flex-item-3 {
+  
+    padding: 10px;
+    flex: 50%;
   }
   
   /* Responsive layout - makes a one column-layout instead of two-column layout */
