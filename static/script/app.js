@@ -242,14 +242,19 @@ $(document).on("click", "#submitSolution", function() {
         }
         $("#loader").css({ "display": "none" })
         if (isCorrect) {
-            alert("Congratulations! You're winner");
+            showResultDialog("Congratulations! You're winner")
         } else {
-            alert("Your answer is not correct. Please try again!");
+            showResultDialog("Your answer is not correct. Please try again!")
         }
     }).fail(function(res) {
         $("#loader").css({ "display": "none" })
     });
 });
+
+const showResultDialog = function (message) {
+    document.getElementsByClassName("modal-result-message")[0].innerHTML = message;
+    document.getElementById("resultModal").style.display = "block";
+}
 
 $(document).on("focus", ".Input", function() {
     clas = this.className;
@@ -445,3 +450,18 @@ function myFunction() {
      x.innerHTML = "Dark Mode";
    }
 }
+
+// When document is ready
+$(function() {
+    var modal = document.getElementById("resultModal");
+    var span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
