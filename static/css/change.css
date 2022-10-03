@@ -1,12 +1,12 @@
 .flex-container {
     display: flex;
     flex-direction: row;
-    font-size: 30px;
+    font-size: 35px;
     text-align: center;
   }
   
   .flex-item-1, .flex-item-2, .flex-item-3, .flex-item-4 {
-    padding: 10px;
+    padding: 15px;
     flex: 50%;
     cursor: pointer;
   }
@@ -20,7 +20,7 @@
   #levelcss{
     height: fit-content;
     width: fit-content;
-    margin: 12px;
+    margin: 14px;
     margin-left: 20%;
     
   
@@ -45,7 +45,7 @@
 .labels label {
    display: inline-block;
     vertical-align: top;
-    margin-right: 3%;
+    margin-right: 4%;
 }
 .labels input {
    display: inline-block;
