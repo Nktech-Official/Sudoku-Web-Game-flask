@@ -136,11 +136,12 @@ $(document).on("click", "#newGame", function() {
 
 
         }
+        buildCurrentBoard();
         start();
     });
 });
-$(document).on("click", "#check", function() {
-    $("#loader").css({ "display": "block" })
+
+const buildCurrentBoard = function() {
     cell = []
     var c,
         list = ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
@@ -180,20 +181,27 @@ $(document).on("click", "#check", function() {
 
         };
     };
+
+    window.currentBoard = {
+        row1: JSON.stringify(row1),
+        row2: JSON.stringify(row2),
+        row3: JSON.stringify(row3),
+        row4: JSON.stringify(row4),
+        row5: JSON.stringify(row5),
+        row6: JSON.stringify(row6),
+        row7: JSON.stringify(row7),
+        row8: JSON.stringify(row8),
+        row9: JSON.stringify(row9),
+    }
+}
+
+$(document).on("click", "#check", function() {
+    $("#loader").css({ "display": "block" })
+
     req = $.ajax({
         type: 'POST',
         url: '/SolveSudoku',
-        data: {
-            row1: JSON.stringify(row1),
-            row2: JSON.stringify(row2),
-            row3: JSON.stringify(row3),
-            row4: JSON.stringify(row4),
-            row5: JSON.stringify(row5),
-            row6: JSON.stringify(row6),
-            row7: JSON.stringify(row7),
-            row8: JSON.stringify(row8),
-            row9: JSON.stringify(row9),
-        }
+        data: window.currentBoard
 
     });
 
@@ -206,66 +214,19 @@ $(document).on("click", "#check", function() {
         }
         $("#loader").css({ "display": "none" })
         pause();
-    });
+    }).fail(function(res) {
+        $("#loader").css({ "display": "none" })
+    });;
 });
 
 
 $(document).on("click", "#submitSolution", function() {
     $("#loader").css({ "display": "block" })
-    cell = []
-    var c,
-        list = ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
-        row1 = [],
-        row2 = [],
-        row3 = [],
-        row4 = [],
-        row5 = [],
-        row6 = [],
-        row7 = [],
-        row8 = [],
-        row9 = [];
-
-    for (i in list) {
-        for (j = 1; j <= 9; j++) {
-            c = '#cell_' + list[i] + j;
-            cell.push(c)
-            if (list[i] == "A") {
-                checkBlank(row1, c);
-            } else if (list[i] == "B") {
-                checkBlank(row2, c);
-            } else if (list[i] == "C") {
-                checkBlank(row3, c);
-            } else if (list[i] == "D") {
-                checkBlank(row4, c);
-            } else if (list[i] == "E") {
-                checkBlank(row5, c);
-            } else if (list[i] == "F") {
-                checkBlank(row6, c);
-            } else if (list[i] == "G") {
-                checkBlank(row7, c);
-            } else if (list[i] == "H") {
-                checkBlank(row8, c);
-            } else if (list[i] == "I") {
-                checkBlank(row9, c);
-            }
-
-        };
-    };
+    
     req = $.ajax({
         type: 'POST',
         url: '/SolveSudoku',
-        data: {
-            row1: JSON.stringify(row1),
-            row2: JSON.stringify(row2),
-            row3: JSON.stringify(row3),
-            row4: JSON.stringify(row4),
-            row5: JSON.stringify(row5),
-            row6: JSON.stringify(row6),
-            row7: JSON.stringify(row7),
-            row8: JSON.stringify(row8),
-            row9: JSON.stringify(row9),
-        }
-
+        data: window.currentBoard
     });
 
     req.done(function(data) {
@@ -285,6 +246,8 @@ $(document).on("click", "#submitSolution", function() {
         } else {
             alert("Your answer is not correct. Please try again!");
         }
+    }).fail(function(res) {
+        $("#loader").css({ "display": "none" })
     });
 });
 
